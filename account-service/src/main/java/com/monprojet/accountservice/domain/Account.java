@@ -6,19 +6,29 @@ import lombok.*;
 
 import java.util.UUID;
 
-@Entity @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor
+@Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "accounts")
 public class Account {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     @Column(nullable = false)
     private String customerReference;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private AccountStatus status = AccountStatus.ACTIVE;
+    private AccountStatus status;
+
     @Column(nullable = false, length = 3)
     private String currency;
+
     @Column(nullable = false)
     private double balance;
 }
