@@ -3,6 +3,7 @@ package com.monprojet.transactionservice.service;
 import com.monprojet.transactionservice.client.AccountClient;
 import com.monprojet.transactionservice.domain.Transaction;
 import com.monprojet.transactionservice.domain.TransactionCreatedEvent;
+import com.monprojet.transactionservice.kafka.TransactionEventProducer;
 import com.monprojet.transactionservice.repository.TransactionRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
